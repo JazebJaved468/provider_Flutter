@@ -1,0 +1,29 @@
+Roadmap
+- stateless and stateful widgets
+- Conventional Method - setState()
+- why to learn state mgt
+- Provider State Management
+- single Provider
+- multi Provider
+- change notifier
+- value listener
+
+
+stateless widgets
+- are immutable
+- can't change its state
+- variable declared final can't change its value during run time, like on pressing button or some other action
+- used with widgets that user don't interact with 
+- uses less memory as they build only once
+- Problem: we can update data but can't rebuild UI and update data on UI.
+
+stateful widgets
+- are mutable
+- use setState() : rebuilds UI/view
+- problem :
+    - rebuilds the whole view(UI/widget) even those widgets whose state didn't even change.
+    - performance isseus if that view contain alot of widgets that don't need to be rebuild.
+
+Why need to learn Provider or any other state management
+- to rebuild only those widgets in which data is being changed and not the whole view in which  that reactive widget is used.
+
