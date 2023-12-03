@@ -9,7 +9,7 @@ Roadmap
 - value listener
 
 
-stateless widgets
+Stateless widgets
 - are immutable
 - can't change its state
 - variable declared final can't change its value during run time, like on pressing button or some other action
@@ -17,13 +17,33 @@ stateless widgets
 - uses less memory as they build only once
 - Problem: we can update data but can't rebuild UI and update data on UI.
 
-stateful widgets
+Stateful widgets
 - are mutable
 - use setState() : rebuilds UI/view
-- problem :
+- problem : efficiency compromise
     - rebuilds the whole view(UI/widget) even those widgets whose state didn't even change.
     - performance isseus if that view contain alot of widgets that don't need to be rebuild.
 
 Why need to learn Provider or any other state management
 - to rebuild only those widgets in which data is being changed and not the whole view in which  that reactive widget is used.
+
+Provider State Management
+Process:
+1) Make a provider class
+2) register it in main.dart before MaterialApp using Multiprovider Widget for safe side
+3) To use data from the provider class in our UI, we have to wrap our UI in consumer widget, and the 'value' (middle parameter of build func, we can change its name as our choice) parameter in the builder func will provide access to all attributes and methods present in our provider class
+
+change notifier
+- has global context
+- class extended with changeNotifier(using keyword 'with') should be initialized before material app
+- instead of returning MaterialApp directly, now we will return changeNotifierProvider(create:()=><classNAmeExtendedWithChangeNotifier> , child : MaterialApp(...))
+
+notifylistener()
+- notify the consumer widgets that there has been some change in the data in the providerclass so update the UI(consumer widget/ itself)
+
+Single Provider
+- only one class
+
+Multi Provider
+- more than one classes
 

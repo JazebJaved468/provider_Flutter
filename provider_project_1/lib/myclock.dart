@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class MyClock extends StatefulWidget {
@@ -13,7 +12,7 @@ class _MyClockState extends State<MyClock> {
   startClock() {
     time++;
     Future.delayed(const Duration(seconds: 10), startClock);
-    print("State updated");
+    // print("State updated");
     setState(() {});
   }
 
@@ -27,7 +26,7 @@ class _MyClockState extends State<MyClock> {
         children: [
           Text(
             '$time secs',
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 50,
               fontWeight: FontWeight.bold,
             ),
@@ -36,7 +35,7 @@ class _MyClockState extends State<MyClock> {
               onPressed: () {
                 startClock();
               },
-              child: Text('Start Clock'))
+              child: const Text('Start Clock'))
         ],
       ),
     ));
