@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:provider_project_1/Views/MyCounter.dart';
+import 'package:provider_project_1/Providers/favouriteProvider.dart';
+import 'package:provider_project_1/Providers/sliderProvider.dart';
+import 'package:provider_project_1/Views/counterViews/MyCounter.dart';
+import 'package:provider_project_1/Views/sliderViews/slider.dart';
+import 'package:provider_project_1/Views/home.dart';
 import 'package:provider_project_1/myclock.dart';
-import 'package:provider_project_1/Providers/counterProviderClass.dart';
+import 'package:provider_project_1/Providers/counterProvider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,17 +18,32 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-        create: (context) => MyCounterProvider(),
-        child: MaterialApp(
-          title: 'Flutter Demo',
-          theme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-            useMaterial3: true,
-          ),
-          home: const MyCounter(),
-          debugShowCheckedModeBanner: false,
-        ));
+    return
+        // Registration of providers
+        MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => MyCounterProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => SliderProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => FavouriteProvider(),
+        ),
+      ],
+
+      // MaterialApp
+      child: MaterialApp(
+        title: 'Provider Projects',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        home: const Home(),
+        debugShowCheckedModeBanner: false,
+      ),
+    );
   }
 }
 

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:provider_project_1/Providers/counterProviderClass.dart';
-import 'package:provider_project_1/Views/SecondCounter.dart';
+import 'package:provider_project_1/Providers/counterProvider.dart';
+import 'package:provider_project_1/Views/counterViews/SecondCounter.dart';
+import 'package:provider_project_1/Views/home.dart';
 
 class MyCounter extends StatelessWidget {
   const MyCounter({super.key});
@@ -13,7 +14,18 @@ class MyCounter extends StatelessWidget {
     print("view build");
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Provider Demo'),
+          title: const Text('Counter App'),
+          actions: [
+            IconButton(
+              icon: Icon(Icons.home),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Home()),
+                );
+              },
+            ),
+          ],
         ),
         body: Center(
           child: Column(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:provider_project_1/Providers/counterProviderClass.dart';
+import 'package:provider_project_1/Providers/counterProvider.dart';
 
 class MySecondCounter extends StatelessWidget {
   const MySecondCounter({super.key});
