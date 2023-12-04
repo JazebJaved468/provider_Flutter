@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider_project_1/Views/counterViews/MyCounter.dart';
 import 'package:provider_project_1/Views/favouriteViews/favourites.dart';
 import 'package:provider_project_1/Views/sliderViews/slider.dart';
+import 'package:provider_project_1/Views/themeViews/theme.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -40,6 +41,9 @@ class Home extends StatelessWidget {
                 SizedBox(
                   height: 20,
                 ),
+
+                 NavigateTo(
+                    navigateTo: MyTheme(), buttonText: "Themes"),
 
                 // spacing
                 SizedBox(
