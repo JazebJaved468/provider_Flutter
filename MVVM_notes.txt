@@ -1,0 +1,17 @@
+MVVM architecture has following layers: 
+- Model
+- View
+- View Model
+- Service
+- Repository
+- Data Source
+
+Project Setup:
+
+Install Following packages:
+- package: fluttertoast
+- package: http
+- package: another_flushbar
+- package: provider
+
+
