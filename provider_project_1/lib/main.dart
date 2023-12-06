@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_project_1/Providers/favouriteProvider.dart';
+import 'package:provider_project_1/Providers/loginProvider.dart';
 import 'package:provider_project_1/Providers/sliderProvider.dart';
 import 'package:provider_project_1/Providers/themeProvider.dart';
 import 'package:provider_project_1/Views/counterViews/MyCounter.dart';
+import 'package:provider_project_1/Views/loginView/login.dart';
 import 'package:provider_project_1/Views/sliderViews/slider.dart';
 import 'package:provider_project_1/Views/home.dart';
 import 'package:provider_project_1/Views/themeViews/theme.dart';
@@ -33,7 +35,12 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(
             create: (context) => FavouriteProvider(),
           ),
-          ChangeNotifierProvider(create: (_) => ThemeProvider())
+          ChangeNotifierProvider(
+            create: (_) => ThemeProvider(),
+          ),
+          ChangeNotifierProvider(
+            create: (_) => LoginProvider(),
+          ),
         ],
 
             // MaterialApp
@@ -48,7 +55,7 @@ class MyApp extends StatelessWidget {
                     colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
                   ),
                   darkTheme: ThemeData.dark(),
-                  home: const MyTheme(),
+                  home: LoginView(),
                   debugShowCheckedModeBanner: false,
                 );
               },

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider_project_1/Views/counterViews/MyCounter.dart';
 import 'package:provider_project_1/Views/favouriteViews/favourites.dart';
+import 'package:provider_project_1/Views/loginView/login.dart';
 import 'package:provider_project_1/Views/sliderViews/slider.dart';
 import 'package:provider_project_1/Views/themeViews/theme.dart';
 
@@ -13,42 +14,44 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Provider Projects'),
       ),
-      body: const Center(
+      body: Center(
         child: SingleChildScrollView(
           child: ColoredBox(
             color: Colors.green,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                NavigateTo(navigateTo: MyCounter(), buttonText: "Counter"),
+                const NavigateTo(
+                    navigateTo: MyCounter(), buttonText: "Counter"),
 
                 // spacing
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
 
-                NavigateTo(navigateTo: MySlider(), buttonText: "Slider"),
+                const NavigateTo(navigateTo: MySlider(), buttonText: "Slider"),
 
                 // spacing
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
 
-                NavigateTo(
+                const NavigateTo(
                     navigateTo: MyFavourites(), buttonText: "Favourites"),
 
                 // spacing
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
 
-                 NavigateTo(
-                    navigateTo: MyTheme(), buttonText: "Themes"),
+                const NavigateTo(navigateTo: MyTheme(), buttonText: "Themes"),
 
                 // spacing
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
+
+                NavigateTo(navigateTo: LoginView(), buttonText: "Login"),
               ],
             ),
           ),
