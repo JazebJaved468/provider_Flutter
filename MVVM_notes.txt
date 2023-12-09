@@ -14,4 +14,31 @@ Install Following packages:
 - package: another_flushbar
 - package: provider
 
+Folder Structure: (dir = folder , f = file)
+
+    lib
+        view 
+        view_model
+        model
+        data
+            network
+            response
+            app_exceptions.dart
+        repository
+        res
+        utils
+
+view_model : implements logic
+view : only UI
+model : parse data to use in our app
+utils : repeatedly used stuff
+repository : link between network layer logic layer, repository sends response to view_model
+res (resources) : colors, constant values, components, urls
+data : managed stuff related to networking, also handling exceptions or errors in api
+
+
+
+Solid Principles: make one class for only one functionality that can easily be modifiable.
+
+
 

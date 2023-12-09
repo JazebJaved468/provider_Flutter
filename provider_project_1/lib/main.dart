@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
                     colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
                   ),
                   darkTheme: ThemeData.dark(),
-                  home: LoginView(),
+                  home: const Home(),
                   debugShowCheckedModeBanner: false,
                 );
               },
