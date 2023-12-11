@@ -11,13 +11,13 @@ class MyCounter extends StatelessWidget {
   Widget build(BuildContext context) {
     final MyCounterProvider MyCounterModel =
         Provider.of<MyCounterProvider>(context, listen: false);
-    print("view build");
+    // print("view build");
     return Scaffold(
         appBar: AppBar(
           title: const Text('Counter App'),
           actions: [
             IconButton(
-              icon: Icon(Icons.home),
+              icon: const Icon(Icons.home),
               onPressed: () {
                 Navigator.push(
                   context,
@@ -32,7 +32,7 @@ class MyCounter extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Consumer<MyCounterProvider>(builder: (context, MyCounter, child) {
-                print("1st widget build");
+                // print("1st widget build");
                 return Text(
                   'You have pushed the button this many times: ${MyCounter.counter}',
                 );

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:provider_project_1/Providers/apiProvider.dart';
 import 'package:provider_project_1/Providers/favouriteProvider.dart';
 import 'package:provider_project_1/Providers/loginProvider.dart';
 import 'package:provider_project_1/Providers/sliderProvider.dart';
 import 'package:provider_project_1/Providers/themeProvider.dart';
+import 'package:provider_project_1/Views/apiViews/get.dart';
 import 'package:provider_project_1/Views/counterViews/MyCounter.dart';
 import 'package:provider_project_1/Views/loginView/login.dart';
 import 'package:provider_project_1/Views/sliderViews/slider.dart';
@@ -41,6 +43,9 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(
             create: (_) => LoginProvider(),
           ),
+          ChangeNotifierProvider(
+            create: (_) => APIProvider(),
+          ),
         ],
 
             // MaterialApp
@@ -55,7 +60,7 @@ class MyApp extends StatelessWidget {
                     colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
                   ),
                   darkTheme: ThemeData.dark(),
-                  home: const Home(),
+                  home: const GetApi(),
                   debugShowCheckedModeBanner: false,
                 );
               },
